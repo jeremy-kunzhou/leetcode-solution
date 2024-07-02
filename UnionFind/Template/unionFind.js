@@ -1,15 +1,15 @@
 class UnionFind {
-  constructor(emails) {
+  constructor(nodeCount) {
     this.par = new Map()
     this.rank = new Map()
-    for (let i = 0; i < emails.length; i++) {
-      this.par.set(emails[i], emails[i])
-      this.rank.set(emails[i], 0)
+    for (let i = 0; i < nodeCount; i++) {
+      this.par.set(i, i)
+      this.rank.set(i, 0)
     }
   }
 
-  find(email) {
-    let p = this.par.get(email)
+  find(node) {
+    let p = this.par.get(node)
     while (p != this.par.get(p)) {
       this.par.set(p, this.par.get(this.par.get(p)))
       p = this.par.get(p)
