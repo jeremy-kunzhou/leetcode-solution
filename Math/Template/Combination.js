@@ -12,6 +12,23 @@ var generatePascalTriangle = function (numRows) {
   return comb
 };
 
+// C(n, m) saved in array
+var getRow = function (rowIndex) {
+  let curr = Array(rowIndex + 1).fill(0)
+  let pre = Array(rowIndex + 1).fill(0)
+
+  pre[0] = 1;
+  for (let i = 0; i < rowIndex + 1; i++) {
+    curr = Array(rowIndex + 1).fill(0)
+    curr[0] = curr[i] = 1;
+    for (let j = 1; j < i; j++) {
+      curr[j] = pre[j - 1] + pre[j]
+    }
+    pre = curr
+  }
+  return pre
+};
+
 // C(n,m) = n choose m
 function processCombination(n, m) {
   let cnt = 1;
@@ -22,4 +39,4 @@ function processCombination(n, m) {
   return cnt
 }
 
-module.exports = { processCombination, generatePascalTriangle }
+module.exports = { processCombination, generatePascalTriangle, getRow }
