@@ -70,7 +70,7 @@ class SegmentTree {
   // O(logn)
   rangeQuery(a, b) {
     if (b < this.L || a > this.R) {
-      return null
+      return -Number.MAX_SAFE_INTEGER / 2
     }
     if (a <= this.L && this.R <= b) {
       return this.val
