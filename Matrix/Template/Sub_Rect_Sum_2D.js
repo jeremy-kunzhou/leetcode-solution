@@ -7,7 +7,7 @@ class RegionSum {
       for (let j = 0; j < n; j++) {
         const a = i == 0 ? 0 : this.presum[i - 1][j]
         const b = j == 0 ? 0 : this.presum[i][j - 1]
-        const c = (i == 0 || j == 0) ? 0 : this.presum[i - i][j - 1]
+        const c = (i == 0 || j == 0) ? 0 : this.presum[i - 1][j - 1]
         this.presum[i][j] = a + b - c + A[i][j]
       }
     }
