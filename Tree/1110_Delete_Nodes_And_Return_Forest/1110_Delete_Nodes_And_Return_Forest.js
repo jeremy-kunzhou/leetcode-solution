@@ -17,7 +17,7 @@
  * 
  */
 
-var delNodes = function (root, to_delete) {
+var delNodesV1 = function (root, to_delete) {
   let nodeMap = new Map()
   let nodeParent = new Map()
   to_delete = new Set(to_delete)
@@ -40,6 +40,37 @@ var delNodes = function (root, to_delete) {
 
     if (to_delete.has(p?.val) || !p) {
       nodeParent.set(node.val, null)
+      if (!to_delete.has(node.val)) {
+        res.add(node)
+      }
+    }
+    if (to_delete.has(node.left?.val)) {
+      node.left = null
+    }
+    if (to_delete.has(node.right?.val)) {
+      node.right = null
+    }
+  }
+
+  dfsDelete(root, null)
+
+
+  return [...res]
+
+};
+
+// remove unused part
+var delNodesV2 = function (root, to_delete) {
+  to_delete = new Set(to_delete)
+  const res = new Set()
+
+  function dfsDelete(node, p) {
+    if (node == null) return
+
+    dfsDelete(node.left, node)
+    dfsDelete(node.right, node)
+
+    if (to_delete.has(p?.val) || !p) {
       if (!to_delete.has(node.val)) {
         res.add(node)
       }
