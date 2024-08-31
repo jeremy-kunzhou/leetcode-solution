@@ -13,6 +13,6 @@ the weight is probability with multiple the weights of the path
 
 # Complexity
 
-- Time complexity: O(V + ElogV)
+- Time complexity: O((V + E)logV)
 
 - Space complexity: O(V + E)
