@@ -6,7 +6,7 @@ function longestValid(strings) {
   for (let i = 0; i < strings.length; i++) {
     state.add(strings[i]);
     // While the state is not valid, remove strings from the left
-    while (!isValid(state)) {
+    while (!isValid(state) && left <= i) {
       state.remove(strings[left]);
       left++;
     }
@@ -29,7 +29,7 @@ function shortestValid(strings) {
   for (let i = 0; i < strings.length; i++) {
     state.add(strings[i]);
     // While the state is not valid, remove strings from the left
-    while (isValid(state)) {
+    while (isValid(state) && left <= i) {
       res = Math.min(res, i - left + 1);
       state.remove(strings[left]);
       left++;
