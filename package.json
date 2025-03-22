@@ -1,0 +1,23 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "LEETCODE DEV",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremy-kunzhou/leetcode-solution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremy-kunzhou/leetcode-solution/issues"
+  },
+  "homepage": "https://github.com/jeremy-kunzhou/leetcode-solution#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
