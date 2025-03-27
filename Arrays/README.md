@@ -7,3 +7,4 @@
 ## Special
 
 QuickSelect
+Boyer-Moore Majority Voting
