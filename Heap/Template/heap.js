@@ -422,3 +422,5 @@ class Heap {
     return new Heap(compare, values).isValid();
   }
 }
+
+module.exports = Heap;
